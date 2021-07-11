@@ -13,14 +13,14 @@ use App\Http\Controllers\FontendController\ContactUsController;
 use App\Http\Controllers\FontendController\EgpTraningController;
 use App\Http\Controllers\FontendController\FontHomeController;
 
-// Controlles for Admin-end
+// Controlles for Admin
 
 
 
-// Controlles for User-end
+// Controlles for User
 
 
-// Route for Fon-end
+// Route for Front-end
 
 Route::get('/', [FontHomeController::class, 'index']);
 
@@ -37,6 +37,12 @@ Route::resource('/private', PrivateController::class);  //All route done
 Route::resource('/fontcatagory', FrontCatagoryController::class); //All route done
 
 
+Route::get('/myadmin', function(){
+    return view('backend.admin.admin');
+});
+Route::get('/myuser', function(){
+    return view('backend.user.user');
+});
 // Route for authincate Admin area
 Auth::routes();
 // For Admin route
