@@ -15,7 +15,7 @@ use App\Http\Controllers\FontendController\FontHomeController;
 
 // Controlles for Admin
 use App\Http\Controllers\BackendController\Admin\AdminHomeController;
-
+use App\Http\Controllers\BackendController\Admin\ClientListController;
 
 // Controlles for User Admin
 use App\Http\Controllers\BackendController\User\UserHomeController;
@@ -42,6 +42,8 @@ Route::resource('/fontcatagory', FrontCatagoryController::class); //All route do
 Auth::routes();
 // For Admin route
 Route::get('/admin', [AdminHomeController::class, 'index']);
+Route::resource('client', ClientListController::class);
+
 
 
 // For User Route
