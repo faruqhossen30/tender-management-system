@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
-class IsAdmin
+class IsClient
 {
     /**
      * Handle an incoming request.
@@ -17,10 +17,10 @@ class IsAdmin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::check() && auth()->user()->is_admin == 1){
+        if(Auth::check() && auth()->user()->is_admin == 0){
             return $next($request);
         }
-        return redirect()->back()->with('error', 'Yoy do not access of admin');
+        return redirect()->back()->with('error', 'Yoy do not access of Client');
         // return back();
     }
 }

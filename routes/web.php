@@ -14,11 +14,11 @@ use App\Http\Controllers\FontendController\EgpTraningController;
 use App\Http\Controllers\FontendController\FontHomeController;
 
 // Controlles for Admin
+use App\Http\Controllers\BackendController\Admin\AdminHomeController;
 
 
-
-// Controlles for User
-
+// Controlles for User Admin
+use App\Http\Controllers\BackendController\User\UserHomeController;
 
 // Route for Front-end
 
@@ -37,25 +37,14 @@ Route::resource('/private', PrivateController::class);  //All route done
 Route::resource('/fontcatagory', FrontCatagoryController::class); //All route done
 
 
-Route::get('/myadmin', function(){
-    return view('backend.admin.admin');
-});
-Route::get('/myuser', function(){
-    return view('backend.user.user');
-});
+
 // Route for authincate Admin area
 Auth::routes();
 // For Admin route
-Route::get('/admin', function () {
-    // return view('welcome');
-    return "Your Login Admin";
-})->middleware('is_admin');
+Route::get('/admin', [AdminHomeController::class, 'index']);
 
 
 // For User Route
-Route::get('/user', function () {
-    // return view('welcome');
-    return "Your Login User";
-})->middleware('auth');
+Route::get('/user', [UserHomeController::class, 'index'])->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
