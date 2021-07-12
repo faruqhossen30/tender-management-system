@@ -1,4 +1,4 @@
-    @extends('backend.partials.app')
+    @extends('backend.user.app')
     @section('body')
     <!-- Content Header (Page header) -->
     <div class="content-header">
