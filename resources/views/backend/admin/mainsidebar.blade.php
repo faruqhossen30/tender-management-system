@@ -57,51 +57,32 @@
             </ul>
           </li>
           <!--End tourism manage  -->
-          <!-- manage User -->
-          <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
-            <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
-              <p>
-                User Manage
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-           <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create user</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Manage user</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-            <!--End manage User -->
             <!-- Tender management -->
             <li class="nav-item has-treeview">
             <a href="#" class="nav-link">
             <i class="fa fa-file" aria-hidden="true"></i>
               <p>
-                Tender Manage
+                Tender
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
            <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="#" class="nav-link">
+              <a href="{{url('tender')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>upload tender</p>
+                  <p>All tender</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{url('tender/create')}}" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>manage tender</p>
+                  <p>Uoload tender</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{url('tender')}}" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Manage Tender</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -141,7 +122,7 @@
             <!--End manage User -->
             <!-- cliend management -->
             <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a href="{{url('/client')}}" class="nav-link">
             <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
               <p>
                 Client Management

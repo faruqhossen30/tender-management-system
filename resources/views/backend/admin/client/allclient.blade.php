@@ -70,7 +70,6 @@
                         @method('DELETE')
                         <button type="submit" onclick="confirm('Sure ? Want to delete company ?')" class="btn btn-danger btn-sm">Delete</button>
                     </form>
-
                 </td>
                 </td>
             </tr>
