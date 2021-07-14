@@ -157,9 +157,22 @@
             </a>
           </li>
           <li>
-            <a href="#" class="__signupbtn">
-              <span class="text-uppercase">Login Now</span>
-            </a>
+            @guest
+            <a href="{{url('/login')}}" class="__signupbtn">
+                <span class="text-uppercase">Login Now</span>
+              </a>
+            @endguest
+            @auth
+                @if (auth()->user()->is_admin == 1)
+            <a href="{{url('/admin')}}" class="__signupbtn">
+                    <span class="text-uppercase">Admin</span>
+                  </a>
+                @elseif (auth()->user()->is_admin == 0)
+                <a href="{{url('/user')}}" class="__signupbtn">
+                    <span class="text-uppercase">My Account</span>
+                  </a>
+                @endif
+            @endauth
           </li>
         </ul>
       </div>

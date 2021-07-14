@@ -25,6 +25,10 @@ use App\Http\Controllers\BackendController\User\UserHomeController;
 
 Route::get('/', [FontHomeController::class, 'index']);
 
+Route::get('/test', function () {
+    return view('test');
+});
+
 Route::resource('/about', AboutUsController::class); //All route done
 Route::resource('/contact', ContactUsController::class); //All route done
 // Route::resource('/egptraning', EgpTraningController::class); // will will work next time
@@ -42,12 +46,20 @@ Route::resource('/fontcatagory', FrontCatagoryController::class); //All route do
 // Route for authincate Admin area
 Auth::routes();
 // For Admin route
-Route::get('/admin', [AdminHomeController::class, 'index']);
-Route::resource('/client', ClientListController::class);
-Route::resource('/tender', TenderController::class);
+
+
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/admin', [AdminHomeController::class, 'index']);
+    Route::resource('/client', ClientListController::class);
+    Route::resource('/tender', TenderController::class);
+});
 
 
 // For User Route
-Route::get('/user', [UserHomeController::class, 'index'])->middleware('auth');
+
+Route::middleware(['auth', 'is_client'])->group(function () {
+    Route::get('/user', [UserHomeController::class, 'index']);
+
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
