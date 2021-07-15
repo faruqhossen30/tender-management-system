@@ -172,27 +172,13 @@
           <!--end innovative idea management -->
           <!-- Country management -->
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+          <a href="{{url('/location')}}" class="nav-link">
             <i class="material-icons" style="font-size:16px;">&#xe7fb;</i>
               <p>
                 Add Location
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
-           <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Create location</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Manage location</p>
-                </a>
-              </li>
-            </ul>
           </li>
           <!--end Country management -->
           <!-- Department management -->

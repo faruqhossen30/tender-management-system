@@ -9,7 +9,7 @@
 <body>
     <p>Teste blade page</p>
 
-
+    <p>{{auth()->user()->email}}</p>
 
 </body>
 </html>

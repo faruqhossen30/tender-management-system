@@ -16,6 +16,7 @@ use App\Http\Controllers\FontendController\FontHomeController;
 // Controlles for Admin
 use App\Http\Controllers\BackendController\Admin\AdminHomeController;
 use App\Http\Controllers\BackendController\Admin\ClientListController;
+use App\Http\Controllers\BackendController\Admin\Tender\LocationController;
 use App\Http\Controllers\BackendController\Admin\TenderController;
 
 // Controlles for Client dashboard
@@ -52,6 +53,7 @@ Route::middleware(['auth', 'is_admin'])->group(function () {
     Route::get('/admin', [AdminHomeController::class, 'index']);
     Route::resource('/client', ClientListController::class);
     Route::resource('/tender', TenderController::class);
+    Route::resource('/location', LocationController::class);
 });
 
 
